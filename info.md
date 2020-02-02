@@ -64,10 +64,11 @@ The National Energy Market operates in the following states:
 
 ## Configuration Options
 
-| Key                    | Type     | Required | Description                            |
-| ---------------------- | -------- | -------- | -------------------------------------- |
-| `region`               | `string` | `True`   | Region of Interest (See Table Sbove)   |
-| `monitored_conditions` | `list`   | `True`   | Monitored Conditions (See Table Below) |
+| Key                    | Type     | Required | Description                               |
+| ---------------------- | -------- | -------- | ----------------------------------------- |
+| `name`                 | `string` | `False`  | Change "OpenNEM {region}:" to user choice |
+| `region`               | `string` | `True`   | Region of Interest (See Table Sbove)      |
+| `monitored_conditions` | `list`   | `True`   | Monitored Conditions (See Table Below)    |
 
 ### Monitored Conditions
 
