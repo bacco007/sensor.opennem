@@ -2,7 +2,7 @@
 
 ## Home Assistant sensor for OpenNEM Data
 
-This component will set up a sensor platform to retrieve data from [OpenNEM](http://www.opennem.org.au), an open platform to access National Electricity Market Data (Australia)
+This component will set up a sensor platform to retrieve data from [OpenNEM](http://www.opennem.org.au), an open platform to access [National Electricity Market](https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/about-the-national-electricity-market-nem) Data (Australia)
 
 [![HitCount](http://hits.dwyl.io/bacco007/sensoropennem.svg)](http://hits.dwyl.io/bacco007/sensoropennem)
 ![LastCommit](https://img.shields.io/github/last-commit/bacco007/sensor.opennem)
@@ -33,7 +33,7 @@ This component will set up a sensor platform to retrieve data from [OpenNEM](htt
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
 2. If you do not have a `custom_components` directory (folder) there, you need to create it.
-3. In the `custom_components` directory (folder) create a new folder called `waternsw`.
+3. In the `custom_components` directory (folder) create a new folder called `opennem`.
 4. Download _all_ the files from the `custom_components/opennem/` directory (folder) in this repository.
 5. Place the files you downloaded in the new directory (folder) you created.
 6. Create Configuration (see below)
