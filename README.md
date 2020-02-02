@@ -69,32 +69,31 @@ The National Energy Market operates in the following states:
 
 ### Monitored Conditions
 
-| Type                  | Monitored Condition   |
-| --------------------- | --------------------- |
-| Battery - Charging    | `battery_charging`    |
-| Battery - Discharging | `battery_discharging` |
-| Biomass               | `biomass`             |
-| Black Coal            | `black_coal`          |
-| Brown Coal            | `brown_coal`          |
-| Exported Electricity  | `exports`             |
-
-      - demand
-      - distillate
-      - fossilfuel
-      - renewables
-      - gas_ccgt
-      - gas_ocgt
-      - gas_recip
-      - gas_steam
-      - generation
-      - hydro
-      - imports
-      - price
-      - pumps
-      - rooftop_solar
-      - solar
-      - temperature
-      - wind
+| Type                             | Monitored Condition   | Description                                                |
+| -------------------------------- | --------------------- | ---------------------------------------------------------- |
+| Battery - Charging               | `battery_charging`    |                                                            |
+| Battery - Discharging            | `battery_discharging` |                                                            |
+| Biomass                          | `biomass`             |                                                            |
+| Black Coal                       | `black_coal`          |                                                            |
+| Brown Coal                       | `brown_coal`          |                                                            |
+| Exported Electricity             | `exports`             | Electricity exported to other Regions                      |
+| Demand                           | `demand`              |                                                            |
+| Distillate                       | `distillate`          |                                                            |
+| Generation by Fossil Fuels       | `fossilfuel`          | Electricity generated (in region) from Fossil Fuel sources |
+| Generation by Renewables         | `renewables`          | Electricity generated (in region) from Renewable sources   |
+| Gas (Combined Cycle Power Plant) | `gas_ccgt`            |                                                            |
+| Gas (Open Cycle Gas Turbines)    | `gas_ocgt`            |                                                            |
+| Gas (Reciprocating Engine)       | `gas_recip`           |                                                            |
+| Gas (Steam)                      | `gas_steam`           |                                                            |
+| Electricity Generated            | `generation`          | Electricity generated in Region                            |
+| Hydro                            | `hydro`               |                                                            |
+| Imported Electricity             | `imports`             | Electricity imported from other Regions                    |
+| Spot Price                       | `price`               | Current Spot Price                                         |
+| Pumps                            | `pumps`               |                                                            |
+| Solar (Rooftop)                  | `rooftop_solar`       |                                                            |
+| Solar (Utility)                  | `solar`               |                                                            |
+| Temperature                      | `temperature`         | Current Average Temperature in Region                      |
+| Wind                             | `wind`                |                                                            |
 
 ---
 
@@ -107,7 +106,7 @@ sensor:
     monitored_conditions:
       - battery_charging
       - battery_discharging
-      - biomass.githu
+      - biomass
       - black_coal
       - brown_coal
       - exports
