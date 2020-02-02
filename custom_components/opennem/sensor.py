@@ -15,7 +15,7 @@ from homeassistant.const import (
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import Throttle
-import homeassistant.util.dt as 
+import homeassistant.util.dt as dt_util
 
 __version__: '0.1'
 
@@ -58,29 +58,29 @@ DATA = {
 MIN_TIME_BETWEEN_UPDATES = datetime.timedelta(seconds=60)
 
 SENSOR_TYPES = {
-    "battery_charging": ["Battery (Charging)", "MW", "mdi:battery-positive"],
-    "battery_discharging": ["Battery (Discharging)", "MW", "mdi:battery-discharging"]
-    "biomass": ["Biomass", "MW", "mdi:transmission-tower"],
-    "black_coal": ["Black Coal", "MW", "mdi:transmission-tower"],
-    "brown_coal": ["Brown Coal", "MW", "mdi:transmission-tower"],
-    "exports": ["Exported Power", "MW", "mdi:swap-vertical"],
-    "demand": ["Electricity Demand", "MW", "mdi:power-socket-au"],
-    "distillate": ["Distillate", "MW", "mdi:transmission-tower"],
-    "fossilfuel": ["Gen from Fossil Fuels", "MW", "mdi:transmission-tower"],
-    "renewables": ['Gen from Renewables', "MW", "mdi:transmission-tower"],
-    'gas_ccgt': ['Gas (CCGT)', 'MW', "mdi:transmission-tower"],
-    'gas_ocgt': ['Gas (OCGT)', 'MW', "mdi:transmission-tower"],
-    'gas_recip': ['Gas (Recip)', 'MW', "mdi:transmission-tower"],
-    'gas_steam': ['Gas (Steam)', 'MW', "mdi:customtransmission-tower"],
-    'generation': ['Electricity Generation', 'MW', "mdi:power-plug"],
-    'hydro': ['Hydro', 'MW', "mdi:hydro-power"],
-    "imports": ["Imported Power", "MW", "mdi:swap-vertical"],
-    "price": ["Current Price", "$/MWh", "mdi:currency-usd"],
-    'pumps': ['Pumps', 'MW', "mdi:transmission-tower"],
-    "rooftop_solar": ["Solar (Rooftop)", "MW", "mdi:solar-power"]
-    "solar": ["Solar (Utility)", "MW", "mdi:solar-power"],
-    "temperature": ["Temperature", TEMP_CELSIUS, "mdi:home-themometer"]
-    "wind": ["Wind", "MW", "mdi:wind-turbine"]
+    'battery_charging': ['Battery (Charging)', 'MW', 'mdi:battery-positive'],
+    'battery_discharging': ['Battery (Discharging)', 'MW', 'mdi:battery-negative'],
+    'biomass': ['Biomass', 'MW', 'mdi:transmission-tower'],
+    'black_coal': ['Black Coal', 'MW', 'mdi:transmission-tower'],
+    'brown_coal': ['Brown Coal', 'MW', 'mdi:transmission-tower'],
+    'exports': ['Exported Power', 'MW', 'mdi:swap-vertical'],
+    'demand': ['Electricity Demand', 'MW', 'mdi:power-socket-au'],
+    'distillate': ['Distillate', 'MW', 'mdi:transmission-tower'],
+    'fossilfuel': ['Gen from Fossil Fuels', 'MW', 'mdi:transmission-tower'],
+    'renewables': ['Gen from Renewables', 'MW', 'mdi:transmission-tower'],
+    'gas_ccgt': ['Gas (CCGT)', 'MW', 'mdi:transmission-tower'],
+    'gas_ocgt': ['Gas (OCGT)', 'MW', 'mdi:transmission-tower'],
+    'gas_recip': ['Gas (Recip)', 'MW', 'mdi:transmission-tower'],
+    'gas_steam': ['Gas (Steam)', 'MW', 'mdi:transmission-tower'],
+    'generation': ['Electricity Generation', 'MW', 'mdi:power-plug'],
+    'hydro': ['Hydro', 'MW', 'mdi:transmission-tower'],
+    'imports': ['Imported Power', 'MW', 'mdi:swap-vertical'],
+    'price': ['Current Price', '$/MWh', 'mdi:currency-usd'],
+    'pumps': ['Pumps', 'MW', 'mdi:transmission-tower'],
+    'rooftop_solar': ['Solar (Rooftop)', 'MW', 'mdi:solar-power'],
+    'solar': ['Solar (Utility)', 'MW', 'mdi:solar-power'],
+    'temperature': ['Temperature', TEMP_CELSIUS, 'mdi:home-thermometer'],
+    'wind': ['Wind', 'MW', 'mdi:wind-turbine'],
 }
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
