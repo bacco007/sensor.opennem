@@ -1,6 +1,6 @@
-<h1>sensor.opennem</h1>
+# sensor.opennem
 
-<h2>Home Assistant sensor for OpenNEM Data</h2>
+## Home Assistant sensor for OpenNEM Data
 
 This component will set up a sensor platform to retrieve data from [OpenNEM](http://www.opennem.org.au), an open platform to access National Electricity Market Data (Australia)
 
@@ -13,15 +13,17 @@ This component will set up a sensor platform to retrieve data from [OpenNEM](htt
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Installation](#installation)
-  - [Manual Installation](#manual-installation)
-  - [Installation via Home Assistant Community Store (HACS)](#installation-via-home-assistant-community-store-hacs)
-- [Regions](#regions)
-- [Configuration Options](#configuration-options)
-  - [Monitored Conditions](#monitored-conditions)
-- [Example Configuration](#example-configuration)
-- [Contributions](#contributions)
+- [sensor.opennem](#sensoropennem)
+  - [Home Assistant sensor for OpenNEM Data](#home-assistant-sensor-for-opennem-data)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+    - [Manual Installation](#manual-installation)
+    - [Installation via Home Assistant Community Store (HACS)](#installation-via-home-assistant-community-store-hacs)
+  - [Regions](#regions)
+  - [Configuration Options](#configuration-options)
+    - [Monitored Conditions](#monitored-conditions)
+  - [Example Configuration](#example-configuration)
+  - [Contributions](#contributions)
 
 ---
 
@@ -133,4 +135,4 @@ sensor:
 
 ## Contributions
 
-Please feel free to contribute, be it with Issues or Pull Requests!
+Please feel free to contribute, be it with Issues or Pull Requests! Please read the [Contribution guidelines](CONTRIBUTING.md)
