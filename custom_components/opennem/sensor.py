@@ -191,7 +191,7 @@ class OpenNEMCurrentData:
         genvalue = None
 
         if not self.should_update():
-            _LOGGER.debug("OpenNEM was last updated %s minutes ago, skipping update", (dt_util_utcnow() - self.last_updated))
+            _LOGGER.debug("OpenNEM was last updated %s minutes ago, skipping update", (dt_util.utcnow() - self.last_updated))
             return
 
         try:
