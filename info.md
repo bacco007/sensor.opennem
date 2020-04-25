@@ -4,10 +4,15 @@
 
 This component will set up a sensor platform to retrieve data from [OpenNEM](http://www.opennem.org.au), an open platform to access [National Electricity Market](https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/about-the-national-electricity-market-nem) Data (Australia)
 
+[![maintained](https://img.shields.io/maintenance/yes/2020.svg)](#)
 [![HitCount](http://hits.dwyl.io/bacco007/sensoropennem.svg)](http://hits.dwyl.io/bacco007/sensoropennem)
 ![LastCommit](https://img.shields.io/github/last-commit/bacco007/sensor.opennem)
 ![Licence](https://img.shields.io/github/license/bacco007/sensor.opennem)
 ![Downloads](https://img.shields.io/github/downloads/bacco007/sensor.opennem/total)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
+![Validate with hassfest](https://github.com/bacco007/sensor.opennem/workflows/Validate%20with%20hassfest/badge.svg)
+
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
 ---
 
@@ -137,3 +142,6 @@ sensor:
 ## Contributions
 
 Please feel free to contribute, be it with Issues or Pull Requests! Please read the [Contribution guidelines](CONTRIBUTING.md)
+
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
+[buymeacoffee]: https://www.buymeacoffee.com/bacco007
