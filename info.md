@@ -82,8 +82,8 @@ The National Energy Market operates in the following states:
 | Battery - Charging               | `battery_charging`    |                                                            |
 | Battery - Discharging            | `battery_discharging` |                                                            |
 | Biomass                          | `biomass`             |                                                            |
-| Black Coal                       | `black_coal`          |                                                            |
-| Brown Coal                       | `brown_coal`          |                                                            |
+| Black Coal                       | `coal_black`          |                                                            |
+| Brown Coal                       | `coal_brown`          |                                                            |
 | Exported Electricity             | `exports`             | Electricity exported to other Regions                      |
 | Demand                           | `demand`              |                                                            |
 | Distillate                       | `distillate`          |                                                            |
@@ -98,8 +98,8 @@ The National Energy Market operates in the following states:
 | Imported Electricity             | `imports`             | Electricity imported from other Regions                    |
 | Spot Price                       | `price`               | Current Spot Price                                         |
 | Pumps                            | `pumps`               |                                                            |
-| Solar (Rooftop)                  | `rooftop_solar`       |                                                            |
-| Solar (Utility)                  | `solar`               |                                                            |
+| Solar (Rooftop)                  | `solar_rooftop`       |                                                            |
+| Solar (Utility)                  | `solar_utility`               |                                                            |
 | Temperature                      | `temperature`         | Current Average Temperature in Region                      |
 | Wind                             | `wind`                |                                                            |
 
