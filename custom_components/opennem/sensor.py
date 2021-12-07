@@ -137,7 +137,7 @@ class OpenNEMSensor(Entity):
         return self.opennem_data.latest_data[self._condition][4]
 
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         attr = {
             ATTR_ATTRIBUTION: ATTRIBUTION,
             ATTR_LAST_UPDATE: self.opennem_data.last_updated,
