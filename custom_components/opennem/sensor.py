@@ -234,6 +234,7 @@ class OpenNEMCurrentData:
                 + DATA["gas_ocgt"][4]
                 + DATA["gas_recip"][4]
                 + DATA["gas_steam"][4]
+                + DATA["gas_wcmg"][4]
             )
             if ffvalue:
                 DATA["fossilfuel"][4] = round(ffvalue, 2)
@@ -241,7 +242,8 @@ class OpenNEMCurrentData:
                 DATA["fossilfuel"][4] = 0
 
             renvalue = (
-                DATA["biomass"][4]
+                DATA["bioenergy_biomass"][4]
+                + DATA["bioenergy_biogas"][4]
                 + DATA["hydro"][4]
                 + DATA["solar_utility"][4]
                 + DATA["wind"][4]
