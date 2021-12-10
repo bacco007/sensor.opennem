@@ -81,7 +81,8 @@ The National Energy Market operates in the following states:
 | -------------------------------- | --------------------- | ---------------------------------------------------------- |
 | Battery - Charging               | `battery_charging`    |                                                            |
 | Battery - Discharging            | `battery_discharging` |                                                            |
-| Biomass                          | `biomass`             |                                                            |
+| BioEnergy (Biomass)              | `bioenergy_biomass`   |                                                            |
+| BioEnergy (Biogas)               | `bioenergy_biogas`    |                                                            |
 | Black Coal                       | `coal_black`          |                                                            |
 | Brown Coal                       | `coal_brown`          |                                                            |
 | Exported Electricity             | `exports`             | Electricity exported to other Regions                      |
@@ -93,6 +94,7 @@ The National Energy Market operates in the following states:
 | Gas (Open Cycle Gas Turbines)    | `gas_ocgt`            |                                                            |
 | Gas (Reciprocating Engine)       | `gas_recip`           |                                                            |
 | Gas (Steam)                      | `gas_steam`           |                                                            |
+| Gas (Waste Coal Mine)            | `gas_wcmg`            |                                                            |
 | Electricity Generated            | `generation`          | Electricity generated in Region                            |
 | Hydro                            | `hydro`               |                                                            |
 | Imported Electricity             | `imports`             | Electricity imported from other Regions                    |
@@ -114,7 +116,8 @@ sensor:
     monitored_conditions:
       - battery_charging
       - battery_discharging
-      - biomass
+      - bioenergy_biomass
+      - bioenergy_biogas
       - coal_black
       - coal_brown
       - exports
@@ -126,6 +129,7 @@ sensor:
       - gas_ocgt
       - gas_recip
       - gas_steam
+      - gas_wcmg
       - generation
       - hydro
       - imports
