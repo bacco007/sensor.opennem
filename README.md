@@ -81,7 +81,8 @@ The National Energy Market operates in the following states:
 | -------------------------------- | --------------------- | ---------------------------------------------------------- |
 | Battery - Charging               | `battery_charging`    |                                                            |
 | Battery - Discharging            | `battery_discharging` |                                                            |
-| Biomass                          | `biomass`             |                                                            |
+| BioEnergy (Biomass)              | `bioenergy_biomass`   |                                                            |
+| BioEnergy (Biogas)               | `bioenergy_biogas`    |                                                            |
 | Black Coal                       | `coal_black`          |                                                            |
 | Brown Coal                       | `coal_brown`          |                                                            |
 | Exported Electricity             | `exports`             | Electricity exported to other Regions                      |
