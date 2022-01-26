@@ -20,7 +20,7 @@ DEFAULT_ICON = "mdi:transmission-tower"
 DEFAULT_NAME = "OpenNEM"
 
 # Misc
-VERSION = "2022.01.1"
+VERSION = "2022.01.2"
 DOMAIN = "opennem"
 PLATFORM = "sensor"
 ATTRIBUTION = "Data provided by OpenNEM"
