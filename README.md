@@ -63,33 +63,40 @@ OpenNEM data is published for the following regions (states):
 
 ## Attributes
 
-| Type                             | Attribute             | Description                                                |
-| -------------------------------- | --------------------- | ---------------------------------------------------------- |
-| Battery - Charging               | `battery_charging`    |                                                            |
-| Battery - Discharging            | `battery_discharging` |                                                            |
-| BioEnergy (Biomass)              | `bioenergy_biomass`   |                                                            |
-| BioEnergy (Biogas)               | `bioenergy_biogas`    |                                                            |
-| Black Coal                       | `coal_black`          |                                                            |
-| Brown Coal                       | `coal_brown`          |                                                            |
-| Exported Electricity             | `exports`             | Electricity exported to other Regions                      |
-| Demand                           | `demand`              |                                                            |
-| Distillate                       | `distillate`          |                                                            |
-| Generation by Fossil Fuels       | `fossilfuel`          | Electricity generated (in region) from Fossil Fuel sources |
-| Generation by Renewables         | `renewables`          | Electricity generated (in region) from Renewable sources   |
-| Gas (Combined Cycle Power Plant) | `gas_ccgt`            |                                                            |
-| Gas (Open Cycle Gas Turbines)    | `gas_ocgt`            |                                                            |
-| Gas (Reciprocating Engine)       | `gas_recip`           |                                                            |
-| Gas (Steam)                      | `gas_steam`           |                                                            |
-| Gas (Waste Coal Mine)            | `gas_wcmg`            |                                                            |
-| Electricity Generated            | `generation`          | Electricity generated in Region                            |
-| Hydro                            | `hydro`               |                                                            |
-| Imported Electricity             | `imports`             | Electricity imported from other Regions                    |
-| Spot Price                       | `price`               | Current Spot Price                                         |
-| Pumps                            | `pumps`               |                                                            |
-| Solar (Rooftop)                  | `solar_rooftop`       |                                                            |
-| Solar (Utility)                  | `solar_utility`       |                                                            |
-| Temperature                      | `temperature`         | Current Average Temperature in Region                      |
-| Wind                             | `wind`                |
+Not all energy sources are applicable in each region, the sensor will only report the sources that are applicable to each region
+
+| Name                             | Type            |                       | Attribute                                                  | Description        |
+| -------------------------------- | --------------- | --------------------- | ---------------------------------------------------------- | ------------------ |
+| Battery - Charging               | Load            | `battery_charging`    |                                                            |
+| Battery - Discharging            | Energy Source   | `battery_discharging` |                                                            |
+| BioEnergy (Biomass)              | Energy Source   | `bioenergy_biomass`   |                                                            |
+| BioEnergy (Biogas)               | Energy Source   | `bioenergy_biogas`    |                                                            |
+| Black Coal                       | Energy Source   | `coal_black`          |                                                            |
+| Brown Coal                       | Energy Source   | `coal_brown`          |                                                            |
+| Exported Electricity             | Outward Energy  | `exports`             | Electricity exported to other Regions                      |
+| Demand                           | Demand          | `demand`              | Not Available in WA                                        |
+| Distillate                       | Energy Source   | `distillate`          |                                                            |
+| Generation by Fossil Fuels       | Calculated      | `fossilfuel`          | Electricity generated (in region) from Fossil Fuel sources |
+| Generation by Renewables         | Calculated      | `renewables`          | Electricity generated (in region) from Renewable sources   |
+| Generation vs Demand             | Calculated      | `genvsdemand`         | See Below (Not available in WA)                            |
+| Gas (Combined Cycle Power Plant) | Energy Source   | `gas_ccgt`            |                                                            |
+| Gas (Open Cycle Gas Turbines)    | Energy Source   | `gas_ocgt`            |                                                            |
+| Gas (Reciprocating Engine)       | Energy Source   | `gas_recip`           |                                                            |
+| Gas (Steam)                      | Energy Source   | `gas_steam`           |                                                            |
+| Gas (Waste Coal Mine)            | Energy Source   | `gas_wcmg`            |                                                            |
+| Electricity Generated            | Calculated      | `generation`          | Electricity generated in Region                            |
+| Hydro                            | Energy Source   | `hydro`               |                                                            |
+| Imported Electricity             | Incoming Energy | `imports`             | Electricity imported from other Regions                    |
+| Spot Price                       | Price           |                       | `price`                                                    | Current Spot Price |
+| Pumps                            | Load            |                       | `pumps`                                                    |                    |
+| Solar (Rooftop)                  | Energy Source   | `solar_rooftop`       |                                                            |
+| Solar (Utility)                  | Energy Source   | `solar_utility`       |                                                            |
+| Temperature                      | Temperature     | `temperature`         | Current Average Temperature in Region                      |
+| Wind                             | Energy Source   | `wind`                |
+
+### Generation vs Demand
+
+The `genvsdemand` attribute is a calculation of the generation in a region (excluding any imports) minus the the region's energy demands. Where the attribute is a negative number, the region is not generating sufficient energy to meet demand.
 
 ## Contributions are welcome!
 
