@@ -7,7 +7,34 @@
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": false,
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": null
+  },
   "files.associations": {
     "*.yaml": "home-assistant"
-  }
+  },
+  "cSpell.words": [
+    "aiohttp",
+    "bacco",
+    "ccgt",
+    "emdata",
+    "emremotedata",
+    "emrow",
+    "emvalue",
+    "fcode",
+    "ffvalue",
+    "fldata",
+    "fregion",
+    "fregionto",
+    "ftype",
+    "genvsdemand",
+    "hass",
+    "ocgt",
+    "opennem",
+    "recip",
+    "renvalue",
+    "wcmg"
+  ]
 }
