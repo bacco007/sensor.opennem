@@ -76,6 +76,8 @@ Not all energy sources are applicable in each region, the sensor will only repor
 | Exported Electricity             | Outward Energy  | `exports`             | Electricity exported to other Regions                      |
 | Demand                           | Demand          | `demand`              | Not Available in WA                                        |
 | Distillate                       | Energy Source   | `distillate`          |                                                            |
+| Emissions Factor                 | Emissions       | `emissions_factor`    | Tonnes of CO2 Equivalent per MW                            |
+| Flow (between Regions)           | Energy Transfer | `flow_{region}`       | Energy Flow between interconnected regions                 |
 | Generation by Fossil Fuels       | Calculated      | `fossilfuel`          | Electricity generated (in region) from Fossil Fuel sources |
 | Generation by Renewables         | Calculated      | `renewables`          | Electricity generated (in region) from Renewable sources   |
 | Generation vs Demand             | Calculated      | `genvsdemand`         | See Below (Not available in WA)                            |

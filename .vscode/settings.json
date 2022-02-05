@@ -26,6 +26,7 @@
     "fcode",
     "ffvalue",
     "fldata",
+    "flremotedata",
     "fregion",
     "fregionto",
     "ftype",

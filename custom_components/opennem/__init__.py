@@ -22,7 +22,6 @@ from .const import (
     API_ENDPOINT_WA,
     API_ENDPOINT_AU,
     CONF_REGION,
-    # DEFAULT_VALUES,
     DEFAULT_NAME,
     DOMAIN,
     PLATFORMS,
@@ -146,7 +145,6 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
             "flow_VIC": 0,
             "last_update": None,
         }
-        # _LOGGER.debug("OpenNEM [%s]: %s, %s", self._region, self._config_entry_id, self.config.data)
         self._interval = DEFAULT_SCAN_INTERVAL
         _LOGGER.debug(
             "OpenNEM [%s1]: Data will be updated every %s", self._region, self._interval
@@ -164,6 +162,8 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
         """Get Latest Date and Update State"""
 
         data = None
+        emdata = None
+        fldata = None
         self._values = {
             "bioenergy_biomass": 0,
             "bioenergy_biogas": 0,
@@ -214,21 +214,32 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
                 _LOGGER.debug("OpenNEM [%s]: Getting State from %s", region, url)
                 if remotedata.status == 200:
                     data = await remotedata.json()
+                else:
+                    _LOGGER.debug("OpenNEM [%s]: Issue getting data", region)
+
             # Emission Factor
-            if region == "wa1":
-                pass
-            elif region == "au":
-                pass
-            else:
-                async with session.get(
-                    API_ENDPOINT_EM.format(region.upper())
-                ) as emremotedata:
-                    if emremotedata.status == 200:
-                        emdata = await emremotedata.json()
+            async with session.get(API_ENDPOINT_EM) as emremotedata:
+                _LOGGER.debug(
+                    "OpenNEM [%s]: Getting Emissions State from %s",
+                    region,
+                    API_ENDPOINT_EM,
+                )
+                if emremotedata.status == 200:
+                    edata = await emremotedata.json()
+                else:
+                    _LOGGER.debug("OpenNEM [%s]: Issue getting emissions data", region)
+
             # Flow from other Regions
             async with session.get(API_ENDPOINT_FLOW) as flremotedata:
+                _LOGGER.debug(
+                    "OpenNEM [%s]: Getting Flow State from %s",
+                    region,
+                    API_ENDPOINT_FLOW,
+                )
                 if flremotedata.status == 200:
                     fldata = await flremotedata.json()
+                else:
+                    _LOGGER.debug("OpenNEM [%s]: Issue getting flow data", region)
 
         if data is not None:
             _LOGGER.debug(
@@ -340,13 +351,15 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
             elif region == "au":
                 pass
             else:
-                if emdata is not None:
-                    for emrow in emdata["data"]:
+                if edata is not None:
+                    for emrow in edata["data"]:
                         if region.upper() in emrow["code"]:
                             emvalue = emrow["history"]["data"][-1]
                             self._values["emissions_factor"] = emvalue
                             regiondata.append("emissions_factor")
                             emvalue = None
+                else:
+                    _LOGGER.debug("OpenNEM [%s]: No Emissions Data Found", region)
 
             # Flow from other region
             if fldata is not None:
@@ -361,6 +374,8 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
                         regiondata.append("flow_" + fregionto)
                     fregionto = None
                     value = None
+            else:
+                _LOGGER.debug("OpenNEM [%s]: No Flow Data Found", region)
 
             if region == "wa1":
                 self._values["last_update"] = dt_util.as_utc(
