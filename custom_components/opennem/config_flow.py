@@ -18,12 +18,10 @@ def configured_instances(hass: HomeAssistant):
         f"{entry.data[CONF_REGION]}"
         for entry in hass.config_entries.async_entries(DOMAIN)
     }
-
-
-class OpenNEMFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
+ class OpenNEMFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle OpenNEM Config Flow"""
 
-    VERSION = 1
+    VERSION = 2
 
     async def _show_form(self, errors: dict[str, Any] | None = None) -> FlowResult:
         """Show Form to User"""
