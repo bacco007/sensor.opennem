@@ -8,12 +8,12 @@
         "title": "OpenNEM",
         "data": { "region": "Choose Region to Monitor" }
       }
-    },
-    "options": {
-      "user": {
-        "title": "OpenNEM",
-        "data": { "region": "Choose Region to Monitor" }
-      }
+    }
+  },
+  "options": {
+    "user": {
+      "title": "OpenNEM",
+      "data": { "region": "Choose Region to Monitor" }
     }
   }
 }
