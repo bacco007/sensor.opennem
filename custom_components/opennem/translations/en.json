@@ -11,9 +11,11 @@
     }
   },
   "options": {
-    "user": {
-      "title": "OpenNEM",
-      "data": { "region": "Choose Region to Monitor" }
+    "step": {
+      "user": {
+        "title": "OpenNEM",
+        "data": { "region": "Choose Region to Monitor" }
+      }
     }
   }
 }
