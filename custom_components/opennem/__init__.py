@@ -266,9 +266,9 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
                 # units = row["units"]
                 # last_update = row["history"]["last"]
 
-                if (row["history"]["data"][-1] != 0):
+                if (row["history"]["data"][-1] != 0 or row["history"]["data"][-1] == None):
                     value = row["history"]["data"][-1]
-                elif (row["history"]["data"][-2] != 0):
+                elif (row["history"]["data"][-2] != 0 or row["history"]["data"][-2] == None):
                     value = row["history"]["data"][-2]
                 else:
                     value = row["history"]["data"][-3]
