@@ -353,14 +353,19 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
                 pass
             else:
                 if edata is not None:
-                    for emrow in edata["data"]:
-                        if region.upper() in emrow["code"]:
-                            emvalue = emrow["history"]["data"][-1]
-                            if emvalue == None:
-                                emvalue = 0
-                            self._values["emissions_factor"] = round(emvalue, 4)
-                            regiondata.append("emissions_factor")
-                            emvalue = None
+                    if edata["response_status"] == "ERROR":
+                        values["emissions_factor"] = 0
+                        regiondata.append("emissions_factor")
+                        _LOGGER.debug("OpenNEM [%s]: Error reported on emissions factor data", region)
+                    else:                    
+                        for emrow in edata["data"]:
+                            if region.upper() in emrow["code"]:
+                                emvalue = emrow["history"]["data"][-1]
+                                if emvalue == None:
+                                    emvalue = 0
+                                self._values["emissions_factor"] = round(emvalue, 4)
+                                regiondata.append("emissions_factor")
+                                emvalue = None
                 else:
                     _LOGGER.debug("OpenNEM [%s]: No Emissions Data Found", region)
 
