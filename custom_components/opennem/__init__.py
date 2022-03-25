@@ -354,7 +354,7 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
             else:
                 if edata is not None:
                     if edata["response_status"] == "ERROR":
-                        values["emissions_factor"] = 0
+                        self._values["emissions_factor"] = 0
                         regiondata.append("emissions_factor")
                         _LOGGER.debug("OpenNEM [%s]: Error reported on emissions factor data", region)
                     else:                    
