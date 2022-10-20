@@ -63,7 +63,6 @@ DEFAULT_VALUES = {
     "temperature": 0,
     "fossilfuel": 0,
     "renewables": 0,
-    "emissions_factor": 0,
     "flow_NSW": 0,
     "flow_QLD": 0,
     "flow_SA": 0,
