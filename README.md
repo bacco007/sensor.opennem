@@ -20,6 +20,8 @@ _This component will set up a sensor platform to retrieve data from [OpenNEM](ht
 | -------- | --------------------------- |
 | `sensor` | Show info from OpenNEM API. |
 
+**IMPORTANT: This integration breaks with Home Assistant 2023.08 - I'm unsure when I will be able to fix the issues that break the integration.  Happy to accept any and all PRs that resolve this (and any other issues with the integration)**
+
 ## Installation
 
 ### Manual Installation
