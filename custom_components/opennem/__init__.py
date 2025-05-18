@@ -228,16 +228,16 @@ class OpenNEMDataUpdateCoordinator(DataUpdateCoordinator):
 #                     _LOGGER.error("OpenNEM [%s]: Issue getting emissions data", region)
 
             # Flow from other Regions
-            async with session.get(API_ENDPOINT_FLOW) as flremotedata:
-                _LOGGER.debug(
-                    "OpenNEM [%s]: Getting Flow State from %s",
-                    region,
-                    API_ENDPOINT_FLOW,
-                )
-                if flremotedata.status == 200:
-                    fldata = await flremotedata.json()
-                else:
-                    _LOGGER.error("OpenNEM [%s]: Issue getting flow data", region)
+#            async with session.get(API_ENDPOINT_FLOW) as flremotedata:
+#                _LOGGER.debug(
+#                    "OpenNEM [%s]: Getting Flow State from %s",
+#                    region,
+#                    API_ENDPOINT_FLOW,
+#                )
+#                if flremotedata.status == 200:
+#                    fldata = await flremotedata.json()
+#                else:
+#                    _LOGGER.error("OpenNEM [%s]: Issue getting flow data", region)
 
         if data is not None:
             _LOGGER.debug(
