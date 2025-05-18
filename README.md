@@ -12,7 +12,7 @@
 
 [![Community Forum][forum-shield]][forum]
 
-_This component will set up a sensor platform to retrieve data from [OpenNEM](http://www.opennem.org.au), an open platform to access [National Electricity Market](https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/about-the-national-electricity-market-nem) Data (Australia)_
+_This component will set up a sensor platform to retrieve data from [OpenElectricity](http://www.openelectricity.org.au), an open platform to access [National Electricity Market](https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/about-the-national-electricity-market-nem) Data (Australia)_
 
 **This component will set up the following platforms.**
 
@@ -20,7 +20,7 @@ _This component will set up a sensor platform to retrieve data from [OpenNEM](ht
 | -------- | --------------------------- |
 | `sensor` | Show info from OpenNEM API. |
 
-**IMPORTANT: This integration breaks with Home Assistant 2023.08 - I'm unsure when I will be able to fix the issues that break the integration.  Happy to accept any and all PRs that resolve this (and any other issues with the integration)**
+**IMPORTANT: This integration currently does not support the authenticated API required for flow between regions.**
 
 ## Installation
 
@@ -79,7 +79,7 @@ Not all energy sources are applicable in each region, the sensor will only repor
 | Demand                           | Demand          | `demand`              | Not Available in WA                                        |
 | Distillate                       | Energy Source   | `distillate`          |                                                            |
 | Emissions Factor                 | Emissions       | `emissions_factor`    | Tonnes of CO2 Equivalent per MW                            |
-| Flow (between Regions)           | Energy Transfer | `flow_{region}`       | Energy Flow between interconnected regions                 |
+| Flow (between Regions)           | Energy Transfer | `flow_{region}`       | Energy Flow between interconnected regions                 | Not Currently Supported |
 | Generation by Fossil Fuels       | Calculated      | `fossilfuel`          | Electricity generated (in region) from Fossil Fuel sources |
 | Generation by Renewables         | Calculated      | `renewables`          | Electricity generated (in region) from Renewable sources   |
 | Generation vs Demand             | Calculated      | `genvsdemand`         | See Below (Not available in WA)                            |
